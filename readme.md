@@ -14,5 +14,5 @@ Aplikasi ini terbuka untuk dikembangkan, dibangun menggunakan [Laravel Framework
 
 ## Issue
 
-Jika anda memiliki ide atau gagasan ataupun masukan, hubungi e-mail Jemsnaban di jemsnaban.info@gmail.com. 
+Jika anda memiliki ide atau gagasan ataupun masukan, hubungi e-mail jemsnaban di jemsnaban.info@gmail.com. 
 
