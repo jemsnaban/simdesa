@@ -10,9 +10,11 @@ SIMDesa merupakan aplikasi berbasis web yang diharapkan dapat membantu desa-desa
 
 ## Pengembangan
 
-Aplikasi ini terbuka untuk dikembangkan, dibangun menggunakan [Laravel Framework](https://laravel.com/) dan [Bootstrap](http://getbootstrap.com/).
+Aplikasi ini terbuka untuk dikembangkan, dibangun menggunakan:
+- [Laravel Framework](https://laravel.com/)
+- [Bootstrap](http://getbootstrap.com/).
+- [Sentinel - Laravel Package](https://cartalyst.com/manual/sentinel/2.0#introduction).
 
 ## Issue
 
-Jika anda memiliki ide atau gagasan ataupun masukan, hubungi e-mail jemsnaban di jemsnaban.info@gmail.com. 
-
+Jika anda memiliki ide atau gagasan ataupun masukan, hubungi e-mail jemsnaban di jemsnaban.info@gmail.com.

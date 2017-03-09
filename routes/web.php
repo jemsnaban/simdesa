@@ -13,23 +13,24 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/login', 'LoginController@login');
-
-Route::post('/login', 'LoginController@postLogin');
-
-Route::post('/register', 'LoginController@postRegister');
-
 Route::post('/logout', 'LoginController@logout');
 
-Route::get('/dashboard/statistik', function () {
-    return view('dashboard.statistik');
+Route::group(['middleware' => 'visitors'], function ()
+{
+    Route::get('/login', 'LoginController@login');
+    Route::post('/login', 'LoginController@postLogin');
+    Route::post('/register', 'LoginController@postRegister');
 });
 
-Route::get('/dashboard/laporan', function () {
-    return view('dashboard.laporan');
-});
+Route::group(['middleware' => ['superadmin']], function ()
+{
+    Route::get('/dashboard/statistik', '');
 
-Route::get('/penduduk/wilayah', function () {
-    return view('penduduk.wilayah');
+    Route::get('/dashboard/laporan', function () {
+        return view('dashboard.laporan');
+    });
+
+    Route::get('/penduduk/wilayah', function () {
+        return view('penduduk.wilayah');
+    });
 });

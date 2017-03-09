@@ -33,10 +33,19 @@
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
 
-    <form action="/register" method="post">
+    <form action="/login" method="post">
       {{ csrf_field() }}
       <div class="form-group has-feedback">
-
+        @if(session('error'))
+        <div class="alert alert-danger">
+          {{ session('error') }}
+        </div>
+        @endif
+        @if(session('success'))
+        <div class="alert alert-success">
+          {{ session('success') }}
+        </div>
+        @endif
       </div>
       <div class="form-group has-feedback">
         <input type="email" class="form-control" placeholder="Email" name="email" required="">
@@ -46,14 +55,14 @@
         <input type="password" class="form-control" placeholder="Password" name="password" required="">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
-      <div class="form-group has-feedback">
+      <!--div class="form-group has-feedback">
         <input type="text" class="form-control" placeholder="Password" name="first_name" required="">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
         <input type="text" class="form-control" placeholder="Password" name="last_name" required="">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-      </div>
+      </div-->
       <div class="row">
         <div class="col-xs-8">
         </div>

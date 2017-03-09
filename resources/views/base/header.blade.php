@@ -268,7 +268,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <form class="" action="index.html" method="post" id="logout-form">
+                  <form class="" action="/logout" method="post" id="logout-form">
                       {{ csrf_field() }}
                       <a href="#" class="btn btn-default btn-flat" onclick="document.getElementById('logout-form').submit()">Sign out</a>
                   </form>
