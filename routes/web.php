@@ -24,13 +24,10 @@ Route::group(['middleware' => 'visitors'], function ()
 
 Route::group(['middleware' => ['superadmin']], function ()
 {
-    Route::get('/dashboard/statistik', '');
+    Route::get('/dashboard/statistik', 'DashboardController@statistik');
+    Route::get('/dashboard/laporan', 'DashboardController@laporan');
+    
+    Route::get('/penduduk/wilayah', 'WilayahController@index');
 
-    Route::get('/dashboard/laporan', function () {
-        return view('dashboard.laporan');
-    });
-
-    Route::get('/penduduk/wilayah', function () {
-        return view('penduduk.wilayah');
-    });
+    Route::get('/penduduk/keluarga', 'KeluargaController@index');
 });
