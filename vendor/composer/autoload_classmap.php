@@ -6,9 +6,18 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'CacatTableSeeder' => $baseDir . '/database/seeds/CacatTableSeeder.php',
+    'CreateAgamasTable' => $baseDir . '/database/migrations/2017_03_13_063234_create_agamas_table.php',
+    'CreateCacatsTable' => $baseDir . '/database/migrations/2017_03_13_060708_create_cacats_table.php',
+    'CreateCaraKbsTable' => $baseDir . '/database/migrations/2017_03_13_063225_create_cara_kbs_table.php',
     'CreateDusunsTable' => $baseDir . '/database/migrations/2017_03_13_040625_create_dusuns_table.php',
+    'CreateHubungansTable' => $baseDir . '/database/migrations/2017_03_13_063243_create_hubungans_table.php',
+    'CreateKawinsTable' => $baseDir . '/database/migrations/2017_03_13_063250_create_kawins_table.php',
     'CreateKeluargasTable' => $baseDir . '/database/migrations/2017_03_12_144222_create_keluargas_table.php',
+    'CreatePekerjaansTable' => $baseDir . '/database/migrations/2017_03_13_063302_create_pekerjaans_table.php',
+    'CreatePendidikansTable' => $baseDir . '/database/migrations/2017_03_13_063308_create_pendidikans_table.php',
+    'CreateRtsTable' => $baseDir . '/database/migrations/2017_03_13_090135_create_rts_table.php',
+    'CreateRwsTable' => $baseDir . '/database/migrations/2017_03_13_080856_create_rws_table.php',
+    'CreateStatusesTable' => $baseDir . '/database/migrations/2017_03_13_063317_create_statuses_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',

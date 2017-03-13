@@ -47,7 +47,21 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li class="{{ Request::segment(2) === 'wilayah' ? 'active' : null }}"><a href="/penduduk/wilayah"><i class="fa fa-circle-o"></i> Wilayah Administrasi</a></li>
+          <li class="{{ Request::segment(2) === 'wilayah' ? 'active' : null }}">
+              <a href="#"><i class="fa fa-circle-o"></i> Wilayah Administrasi
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+              <ul class="treeview-menu">
+                <li class="{{ Request::segment(3) === 'dusun' ? 'active' : null }}">
+                  <a href="/penduduk/wilayah/dusun"><i class="fa fa-circle-o"></i> Dusun</a></li>
+                <li class="{{ Request::segment(3) === 'rw' ? 'active' : null }}">
+                  <a href="/penduduk/wilayah/rw"><i class="fa fa-circle-o"></i> RW</a></li>
+                <li class="{{ Request::segment(3) === 'rt' ? 'active' : null }}">
+                  <a href="/penduduk/wilayah/rt"><i class="fa fa-circle-o"></i> RT</a></li>
+              </ul>
+            </li>
           <li class="{{ Request::segment(2) === 'keluarga' ? 'active' : null }}"><a href="/penduduk/keluarga"><i class="fa fa-circle-o"></i> Keluarga</a></li>
           <li><a href="/penduduk/daftar"><i class="fa fa-circle-o"></i> Penduduk</a></li>
           <li><a href="/penduduk/kelompok"><i class="fa fa-circle-o"></i> Kelompok</a></li>

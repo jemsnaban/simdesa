@@ -22,7 +22,7 @@ class DusunController extends Controller
     {
       Dusun::create($request->all());
 
-      return redirect('/penduduk/wilayah');
+      return redirect('/penduduk/wilayah/dusun');
     }
 
     public function edit($id)
@@ -37,7 +37,7 @@ class DusunController extends Controller
       $dusun = Dusun::findOrFail($id);
       $dusun->update($request->all());
 
-      return redirect('/penduduk/wilayah');
+      return redirect('/penduduk/wilayah/dusun');
     }
 
 }

@@ -8,6 +8,7 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">Kependudukan</a></li>
         <li><a href="#">Wilayah</a></li>
         <li><a href="#">Dusun</a></li>
         <li class="active">ubah</li>

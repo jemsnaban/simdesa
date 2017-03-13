@@ -282,9 +282,18 @@ class ComposerStaticInita08dc2e1ccda96b399e73f17136daee0
     );
 
     public static $classMap = array (
-        'CacatTableSeeder' => __DIR__ . '/../..' . '/database/seeds/CacatTableSeeder.php',
+        'CreateAgamasTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_13_063234_create_agamas_table.php',
+        'CreateCacatsTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_13_060708_create_cacats_table.php',
+        'CreateCaraKbsTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_13_063225_create_cara_kbs_table.php',
         'CreateDusunsTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_13_040625_create_dusuns_table.php',
+        'CreateHubungansTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_13_063243_create_hubungans_table.php',
+        'CreateKawinsTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_13_063250_create_kawins_table.php',
         'CreateKeluargasTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_12_144222_create_keluargas_table.php',
+        'CreatePekerjaansTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_13_063302_create_pekerjaans_table.php',
+        'CreatePendidikansTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_13_063308_create_pendidikans_table.php',
+        'CreateRtsTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_13_090135_create_rts_table.php',
+        'CreateRwsTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_13_080856_create_rws_table.php',
+        'CreateStatusesTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_13_063317_create_statuses_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',

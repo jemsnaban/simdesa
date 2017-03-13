@@ -18,3 +18,7 @@ Aplikasi ini terbuka untuk dikembangkan, dibangun menggunakan:
 ## Issue
 
 Jika anda memiliki ide atau gagasan ataupun masukan, masukkan di [https://github.com/jemsnaban/simdesa/issues](https://github.com/jemsnaban/simdesa/issues) atau hubungi e-mail jemsnaban di jemsnaban.info@gmail.com.
+
+## Hak Cipta, Syarat dan Ketentuan
+
+Sistem ini dikelola dengan merujuk pada lisensi [GNU General Public License Version 3](https://github.com/jemsnaban/simdesa/blob/master/LICENSE.md)
