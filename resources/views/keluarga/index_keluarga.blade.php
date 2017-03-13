@@ -5,14 +5,17 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Data Tables
-      <small>advanced tables</small>
+      Daftar KK
     </h1>
     <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li><a href="#">Tables</a></li>
-      <li class="active">Data tables</li>
+      <li><a href="{{ url('/dashboard/statistik') }}"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="#">Penduduk</a></li>
+      <li><a href="#">Keluarga</a></li>
+      <li class="active">Daftar</li>
     </ol>
+
+    <br>
+    <a href="{{ url('/penduduk/keluarga/create') }}" class="btn btn-primary">Input data baru</a>
   </section>
 
   <!-- Main content -->
@@ -21,7 +24,7 @@
       <div class="col-xs-12">
         <div class="box">
           <div class="box-header">
-            <h3 class="box-title">Data Table With Full Features</h3>
+            <h3 class="box-title">Daftar semua KK</h3>
           </div>
           <!-- /.box-header -->
           <div class="box-body">
@@ -42,7 +45,14 @@
                         <td>{{ $keluarga->kk_nik_kepala }}</td>
                         <td>{{ $keluarga->kk_alamat }}</td>
                         <td>{{ $keluarga->created_at }}</td>
-                        <td>action</td>
+                        <td style="text-align:left"><div class="btn-group">
+                              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                              Action   <span class="caret"></span></button>
+                              <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ url('/penduduk/keluarga/edit/' . $keluarga->id ) }}">Ubah</a></li>
+                              </ul>
+                            </div>
+                        </td>
                     </tr>
                 @endforeach
               </tbody>

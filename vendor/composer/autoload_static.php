@@ -282,6 +282,8 @@ class ComposerStaticInita08dc2e1ccda96b399e73f17136daee0
     );
 
     public static $classMap = array (
+        'CacatTableSeeder' => __DIR__ . '/../..' . '/database/seeds/CacatTableSeeder.php',
+        'CreateDusunsTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_13_040625_create_dusuns_table.php',
         'CreateKeluargasTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_12_144222_create_keluargas_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',

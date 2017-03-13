@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKeluargasTable extends Migration
+class CreateDusunsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,15 @@ class CreateKeluargasTable extends Migration
      */
     public function up()
     {
-        Schema::create('keluargas', function (Blueprint $table) {
+        Schema::create('dusuns', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('kk_no');
-            $table->string('kk_nik_kepala');
-            $table->string('kk_alamat');
-            $table->integer('kk_id_cluster')->nullable();
+            $table->string('dusun_nama');
+            $table->integer('dusun_kadus_id');
             $table->timestamps();
 
             $table->engine = 'InnoDB';
-            $table->unique('kk_no');
-            $table->unique('kk_nik_kepala');
+            $table->unique('dusun_nama');
+            $table->unique('dusun_kadus_id');
         });
     }
 
@@ -34,6 +32,6 @@ class CreateKeluargasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('keluargas');
+        Schema::dropIfExists('dusuns');
     }
 }

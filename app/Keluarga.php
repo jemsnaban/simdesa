@@ -15,6 +15,6 @@ class Keluarga extends Model
    * @var array
    */
   protected $fillable = [
-      'kk_no', 'kk_nik_kepala', 'kk_alamat',
+      'kk_no', 'kk_nik_kepala', 'kk_alamat', 'kk_id_cluster'
   ];
 }

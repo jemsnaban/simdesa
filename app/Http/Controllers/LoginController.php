@@ -34,6 +34,11 @@ class LoginController extends Controller
       return redirect('/login');
     }
 
+    public function register()
+    {
+      return view('authentication.register');
+    }
+
     public function postRegister(Request $request)
     {
       $user = Sentinel::registerAndActivate($request->all());

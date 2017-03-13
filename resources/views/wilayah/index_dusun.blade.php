@@ -13,6 +13,9 @@
       <li><a href="#">Tables</a></li>
       <li class="active">Data tables</li>
     </ol>
+
+    <br>
+    <a href="{{ url('/penduduk/wilayah/dusun/create') }}" class="btn btn-primary">Input dusun baru</a>
   </section>
 
   <!-- Main content -->
