@@ -45,9 +45,9 @@
                 @foreach($rts as $rt)
                     <tr>
                         <td>{{ $rt->rt_nama }}</td>
-                        <td>{{ $rt->rt_ketua_id }}</td>
-                        <td>{{ $rt->rt_rw_id }}</td>
-                        <td>{{ $rt->rt_dusun_id }}</td>
+                        <td>{{ $rt->ketua_rt }}</td>
+                        <td>{{ $rt->rw }}</td>
+                        <td>{{ $rt->dusun }}</td>
                         <td></td>
                         <td></td>
                         <td style="text-align:left"><div class="btn-group">

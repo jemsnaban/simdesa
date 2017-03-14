@@ -98,4 +98,34 @@ class PendudukController extends Controller
 
       return redirect('/penduduk/list');
     }
+
+    public function namaAutoComplete(Request $request) {
+        $query = $request->get('term','');
+
+        $penduduks = Penduduk::where('nama','LIKE','%'.$query.'%')->get();
+
+        $data=array();
+        foreach ($penduduks as $penduduk) {
+              $data[]=array('value' => $penduduk->nama." - ".$penduduk->nik , 'id' => $penduduk->id);
+        }
+        if(count($data))
+             return $data;
+        else
+            return ['value'=>'No Result Found','id'=>''];
+    }
+
+    public function nikAutoComplete(Request $request) {
+        $query = $request->get('term','');
+
+        $penduduks = Penduduk::where('nik','LIKE','%'.$query.'%')->get();
+
+        $data=array();
+        foreach ($penduduks as $penduduk) {
+              $data[]=array('value' => $penduduk->nik . " - " . $penduduk->nama , 'nik' => $penduduk->nik , 'id' => $penduduk->id);
+        }
+        if(count($data))
+             return $data;
+        else
+            return ['value'=>'No Result Found','id'=>'', 'nik' => ''];
+    }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Dusun;
 use App\Rw;
@@ -11,7 +12,13 @@ class RTController extends Controller
 {
   public function index()
   {
-    $rts = Rt::all();
+    $rts = DB::table('rts AS a')
+              ->leftJoin('penduduks AS b', 'b.id', '=', 'a.rt_ketua_id')
+              ->leftJoin('rws AS c', 'c.id', '=', 'a.rt_rw_id')
+              ->leftJoin('dusuns AS d', 'd.id', '=', 'a.rt_dusun_id')
+              ->select('a.*', 'b.nama as ketua_rt', 'c.rw_nama as rw', 'd.dusun_nama as dusun')
+              ->get();
+
     return view('rt.index_rt', compact('rts'));
   }
 
@@ -31,7 +38,12 @@ class RTController extends Controller
 
   public function edit($id)
   {
-    $rt = Rt::findOrFail($id);
+    $rt = DB::table('rts AS a')
+              ->leftJoin('penduduks AS b', 'b.id', '=', 'a.rt_ketua_id')
+              ->select('a.*', 'b.nama as ketua_rt', 'b.nik as rt_nik')
+              ->where('a.id', '=', $id)
+              ->get()->first();
+              
     $rws = Rw::all();
     $dusuns = Dusun::all();
 

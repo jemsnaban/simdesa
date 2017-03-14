@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Keluarga;
+use App\Penduduk;
 
 class KeluargaController extends Controller
 {
@@ -27,7 +29,11 @@ class KeluargaController extends Controller
 
   public function edit($id)
   {
-    $keluarga = Keluarga::findOrFail($id);
+    $keluarga = DB::table('keluargas AS a')
+              ->leftJoin('penduduks AS b', 'b.nik', '=', 'a.kk_nik_kepala')
+              ->select('a.*', 'b.nama as kepala_keluarga')
+              ->where('a.id', '=', $id)
+              ->get()->first();
     //dd($keluarga);
     return view('keluarga.edit_keluarga', compact('keluarga'));
   }
@@ -40,6 +46,5 @@ class KeluargaController extends Controller
     return redirect('/penduduk/keluarga');
   }
 
-  
 
 }

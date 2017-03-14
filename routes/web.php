@@ -63,5 +63,6 @@ Route::group(['middleware' => ['superadmin']], function ()
     Route::post('/penduduk/list/create', 'PendudukController@store');
     Route::get('/penduduk/list/edit/{id}', 'PendudukController@edit');
     Route::put('/penduduk/list/edit/{id}', 'PendudukController@update');
+    Route::get('searchpenduduk', array('as'=>'searchpenduduk','uses'=>'PendudukController@nikAutoComplete'));
 
 });
