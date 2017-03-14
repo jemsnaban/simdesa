@@ -34,6 +34,7 @@ Route::group(['middleware' => ['superadmin']], function ()
     Route::post('/penduduk/wilayah/dusun/create', 'DusunController@store');
     Route::get('/penduduk/wilayah/dusun/edit/{id}', 'DusunController@edit');
     Route::put('/penduduk/wilayah/dusun/edit/{id}', 'DusunController@update');
+    Route::get('searchdusun',array('as'=>'searchdusun','uses'=>'DusunController@autoComplete'));
 
     //crud RW
     Route::get('/penduduk/wilayah/rw', 'RWController@index');
@@ -55,4 +56,12 @@ Route::group(['middleware' => ['superadmin']], function ()
     Route::post('/penduduk/keluarga/create', 'KeluargaController@store');
     Route::get('/penduduk/keluarga/edit/{id}', 'KeluargaController@edit');
     Route::put('/penduduk/keluarga/edit/{id}', 'KeluargaController@update');
+
+    //crud penduduk
+    Route::get('/penduduk/list', 'PendudukController@index');
+    Route::get('/penduduk/list/create', 'PendudukController@create');
+    Route::post('/penduduk/list/create', 'PendudukController@store');
+    Route::get('/penduduk/list/edit/{id}', 'PendudukController@edit');
+    Route::put('/penduduk/list/edit/{id}', 'PendudukController@update');
+
 });

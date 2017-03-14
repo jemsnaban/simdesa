@@ -15,6 +15,7 @@ return array(
     'CreateKeluargasTable' => $baseDir . '/database/migrations/2017_03_12_144222_create_keluargas_table.php',
     'CreatePekerjaansTable' => $baseDir . '/database/migrations/2017_03_13_063302_create_pekerjaans_table.php',
     'CreatePendidikansTable' => $baseDir . '/database/migrations/2017_03_13_063308_create_pendidikans_table.php',
+    'CreatePenduduksTable' => $baseDir . '/database/migrations/2017_03_14_020038_create_penduduks_table.php',
     'CreateRtsTable' => $baseDir . '/database/migrations/2017_03_13_090135_create_rts_table.php',
     'CreateRwsTable' => $baseDir . '/database/migrations/2017_03_13_080856_create_rws_table.php',
     'CreateStatusesTable' => $baseDir . '/database/migrations/2017_03_13_063317_create_statuses_table.php',

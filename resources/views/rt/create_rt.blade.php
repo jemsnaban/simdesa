@@ -51,7 +51,8 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Nama Ketua RT</label>
-                  <input type="text" class="form-control" name="rt_ketua_id" id="exampleInputPassword1" placeholder="Nama kepada dusun">
+                  <input type="text" class="form-control" name="rt_ketua_nama" id="search_text" placeholder="Nama kepada dusun">
+                  <input type="hidden" name="rt_ketua_id" id="q" value="">
                 </div>
               </div>
               <!-- /.box-body -->
@@ -80,5 +81,31 @@
     //Initialize Select2 Elements
     $(".select2").select2();
   });
+
+  src = "{{ route('searchdusun') }}";
+   $("#search_text").autocomplete({
+      source: function(request, response) {
+          $.ajax({
+              url: src,
+              dataType: "json",
+              data: {
+                  term : request.term
+              },
+              success: function(data) {
+                  response(data);
+              }
+          });
+      },
+      min_length: 3,
+      select: function(event, ui) {
+        //alert(ui.item.id);
+        $('#q').val(ui.item.id);
+      }
+  });
 </script>
+@endsection
+
+@section('content-css')
+<!-- Daterange picker -->
+<link rel="stylesheet" href="/assets/dist/css/jquery.ui.autocomplete.css">
 @endsection

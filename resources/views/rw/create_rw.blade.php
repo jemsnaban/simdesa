@@ -41,7 +41,8 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Nama Ketua RW</label>
-                  <input type="text" class="form-control" name="rw_ketua_id" id="exampleInputPassword1" placeholder="Nama kepada dusun">
+                  <input type="text" class="form-control" name="rw_ketua_nama" id="search_text" placeholder="Nama kepada dusun">
+                  <input type="hidden" name="rw_ketua_id" id="q" value="">
                 </div>
               </div>
               <!-- /.box-body -->
@@ -62,6 +63,11 @@
 <link rel="stylesheet" href="/assets/plugins/select2/select2.min.css">
 @endsection
 
+@section('content-css')
+<!-- Daterange picker -->
+<link rel="stylesheet" href="/assets/dist/css/jquery.ui.autocomplete.css">
+@endsection
+
 @section('content-js')
 <!-- Select2 -->
 <script src="/assets/plugins/select2/select2.full.min.js"></script>
@@ -69,6 +75,27 @@
   $(function () {
     //Initialize Select2 Elements
     $(".select2").select2();
+  });
+
+  src = "{{ route('searchdusun') }}";
+   $("#search_text").autocomplete({
+      source: function(request, response) {
+          $.ajax({
+              url: src,
+              dataType: "json",
+              data: {
+                  term : request.term
+              },
+              success: function(data) {
+                  response(data);
+              }
+          });
+      },
+      min_length: 3,
+      select: function(event, ui) {
+        //alert(ui.item.id);
+        $('#q').val(ui.item.id);
+      }
   });
 </script>
 @endsection

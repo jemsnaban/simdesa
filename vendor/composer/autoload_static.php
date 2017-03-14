@@ -291,6 +291,7 @@ class ComposerStaticInita08dc2e1ccda96b399e73f17136daee0
         'CreateKeluargasTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_12_144222_create_keluargas_table.php',
         'CreatePekerjaansTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_13_063302_create_pekerjaans_table.php',
         'CreatePendidikansTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_13_063308_create_pendidikans_table.php',
+        'CreatePenduduksTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_14_020038_create_penduduks_table.php',
         'CreateRtsTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_13_090135_create_rts_table.php',
         'CreateRwsTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_13_080856_create_rws_table.php',
         'CreateStatusesTable' => __DIR__ . '/../..' . '/database/migrations/2017_03_13_063317_create_statuses_table.php',

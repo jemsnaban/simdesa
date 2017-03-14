@@ -44,7 +44,7 @@
                   @foreach($rws as $rw)
                     <tr>
                       <td>{{ $rw->rw_nama }}</td>
-                      <td>{{ $rw->rw_ketua_id }}</td>
+                      <td>{{ $rw->ketua_rw }}</td>
                       <td></td>
                       <td></td>
                       <td></td>

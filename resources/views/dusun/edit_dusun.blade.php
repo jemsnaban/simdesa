@@ -34,7 +34,8 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Nama Kepala Dusun</label>
-                  <input type="text" class="form-control" name="dusun_kadus_id" id="exampleInputPassword1" value="{{ $dusun->dusun_kadus_id }}">
+                  <input type="text" class="form-control" name="dusun_kadus_nama" id="search_text" value="{{ $dusun->kadus. ' - ' . $dusun->kadus_nik }}">
+                  <input type="hidden" name="dusun_kadus_id" id="q" value="{{ $dusun->dusun_kadus_id }}">
                 </div>
               </div>
               <!-- /.box-body -->
@@ -49,4 +50,34 @@
         </section>
   <!-- /.content -->
 </div>
+@endsection
+
+@section('content-css')
+<!-- Daterange picker -->
+<link rel="stylesheet" href="/assets/dist/css/jquery.ui.autocomplete.css">
+@endsection
+
+@section('content-js')
+<script type="text/javascript">
+    src = "{{ route('searchdusun') }}";
+     $("#search_text").autocomplete({
+        source: function(request, response) {
+            $.ajax({
+                url: src,
+                dataType: "json",
+                data: {
+                    term : request.term
+                },
+                success: function(data) {
+                    response(data);
+                }
+            });
+        },
+        min_length: 3,
+        select: function(event, ui) {
+          //alert(ui.item.id);
+          $('#q').val(ui.item.id);
+        }
+    });
+</script>
 @endsection

@@ -47,7 +47,7 @@
                 @foreach($dusuns as $dusun)
                     <tr>
                         <td>{{ $dusun->dusun_nama }}</td>
-                        <td>{{ $dusun->dusun_kadus_id }}</td>
+                        <td>{{ $dusun->kadus }}</td>
                         <td></td>
                         <td></td>
                         <td></td>

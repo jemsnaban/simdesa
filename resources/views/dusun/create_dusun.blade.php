@@ -29,11 +29,12 @@
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Nama Dusun</label>
-                  <input type="text" class="form-control" name="dusun_nama" id="exampleInputEmail1" placeholder="Masukkan Nama Dusun">
+                  <input type="text" class="form-control" name="dusun_nama" id="exampleInputEmail1" placeholder="Masukkan Nama Dusun" required="">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Nama Kepala Dusun</label>
-                  <input type="text" class="form-control" name="dusun_kadus_id" id="exampleInputPassword1" placeholder="Nama kepada dusun">
+                  <input type="text" class="form-control" name="dusun_kadus_nama" id="search_text" placeholder="Nama kepada dusun" required="">
+                  <input type="hidden" id="q" class="form-control" name="dusun_kadus_id" value="" required="">
                 </div>
               </div>
               <!-- /.box-body -->
@@ -47,4 +48,34 @@
         </section>
   <!-- /.content -->
 </div>
+@endsection
+
+@section('content-css')
+<!-- Daterange picker -->
+<link rel="stylesheet" href="/assets/dist/css/jquery.ui.autocomplete.css">
+@endsection
+
+@section('content-js')
+<script type="text/javascript">
+src = "{{ route('searchdusun') }}";
+     $("#search_text").autocomplete({
+        source: function(request, response) {
+            $.ajax({
+                url: src,
+                dataType: "json",
+                data: {
+                    term : request.term
+                },
+                success: function(data) {
+                    response(data);
+                }
+            });
+        },
+        min_length: 3,
+        select: function(event, ui) {
+          //alert(ui.item.id);
+          $('#q').val(ui.item.id);
+        }
+    });
+</script>
 @endsection

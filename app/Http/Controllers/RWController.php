@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Dusun;
 use App\Rw;
@@ -10,7 +11,11 @@ class RWController extends Controller
 {
     public function index()
     {
-      $rws = Rw::all();
+      $rws = DB::table('rws AS a')
+                ->leftJoin('penduduks AS b', 'b.id', '=', 'a.rw_ketua_id')
+                ->select('a.*', 'b.nama as ketua_rw')
+                ->get();
+
       return view('rw.index_rw', compact('rws'));
     }
 
@@ -29,7 +34,11 @@ class RWController extends Controller
 
     public function edit($id)
     {
-      $rw = Rw::findOrFail($id);
+      $rw = DB::table('rws AS a')
+                ->leftJoin('penduduks AS b', 'b.id', '=', 'a.rw_ketua_id')
+                ->select('a.*', 'b.nama as ketua_rw', 'b.nik as nik_rw')
+                ->where('a.id', '=', $id)
+                ->get()->first();
       $dusuns = Dusun::all();
 
       return view('rw.edit_rw')->with(compact('rw', 'dusuns'));
