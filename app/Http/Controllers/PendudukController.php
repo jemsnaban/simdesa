@@ -106,12 +106,12 @@ class PendudukController extends Controller
 
         $data=array();
         foreach ($penduduks as $penduduk) {
-              $data[]=array('value' => $penduduk->nama." - ".$penduduk->nik , 'id' => $penduduk->id);
+              $data[]=array('value' => $penduduk->nama." - ".$penduduk->nik , 'id' => $penduduk->id, 'nik' => $penduduk->nik);
         }
         if(count($data))
              return $data;
         else
-            return ['value'=>'No Result Found','id'=>''];
+            return ['value'=>'No Result Found','id'=>'', 'nik' => ''];
     }
 
     public function nikAutoComplete(Request $request) {

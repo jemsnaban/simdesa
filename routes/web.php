@@ -64,5 +64,19 @@ Route::group(['middleware' => ['superadmin']], function ()
     Route::get('/penduduk/list/edit/{id}', 'PendudukController@edit');
     Route::put('/penduduk/list/edit/{id}', 'PendudukController@update');
     Route::get('searchpenduduk', array('as'=>'searchpenduduk','uses'=>'PendudukController@nikAutoComplete'));
+    Route::get('searchnama', array('as'=>'searchnama','uses'=>'PendudukController@namaAutoComplete'));
 
+    //crud pemerintah
+    Route::get('/desa/pemerintah', 'PemerintahController@index');
+    Route::get('/desa/pemerintah/create', 'PemerintahController@create');
+    Route::post('/desa/pemerintah/create', 'PemerintahController@store');
+    Route::get('/desa/pemerintah/edit/{id}', 'PemerintahController@edit');
+    Route::put('/desa/pemerintah/edit/{id}', 'PemerintahController@update');
+
+
+    Route::get('/tentang', function () {
+        return view('tentang');
+    });
+
+    Route::get('/master/agama', 'MasterController@agama');
 });

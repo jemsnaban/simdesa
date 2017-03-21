@@ -40,7 +40,7 @@
       </li>
       <li class="{{ Request::segment(1) === 'penduduk' ? 'active' : null }} treeview">
         <a href="#">
-          <i class="fa fa-files-o"></i>
+          <i class="fa fa-address-book-o"></i>
           <span>Kependudukan</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
@@ -69,7 +69,7 @@
       </li>
       <li class="treeview">
         <a href="#">
-          <i class="fa fa-files-o"></i>
+          <i class="fa fa-folder-open-o"></i>
           <span>Surat</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
@@ -82,15 +82,7 @@
           <li><a href="/surat/panduan"><i class="fa fa-circle-o"></i> Panduan</a></li>
         </ul>
       </li>
-      <li>
-        <a href="/bantuan">
-          <i class="fa fa-th"></i> <span>Bantuan</span>
-          <span class="pull-right-container">
-            <small class="label pull-right bg-green">new</small>
-          </span>
-        </a>
-      </li>
-      <li class="treeview">
+      <li class="treeview {{ Request::segment(1) === 'desa' ? 'active' : null }}">
         <a href="#">
           <i class="fa fa-pie-chart"></i>
           <span>Desa</span>
@@ -99,14 +91,34 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="/desa/identitas"><i class="fa fa-circle-o"></i> Identitas Desa</a></li>
-          <li><a href="/desa/pemerintah"><i class="fa fa-circle-o"></i> Pemerintah Desa</a></li>
+          <li class="{{ Request::segment(2) === 'identitas' ? 'active' : null }}"><a href="/desa/identitas"><i class="fa fa-circle-o"></i> Identitas Desa</a></li>
+          <li class="{{ Request::segment(2) === 'pemerintah' ? 'active' : null }}"><a href="/desa/pemerintah"><i class="fa fa-circle-o"></i> Pemerintah Desa</a></li>
         </ul>
       </li>
-      <li><a href="/pengguna"><i class="fa fa-book"></i> <span>Pengguna</span></a></li>
+      <li><a href="/pengguna"><i class="fa fa-users"></i> <span>Pengguna</span></a></li>
+      <li class="treeview">
+        <a href="#">
+          <i class="fa fa-sliders"></i>
+          <span>Master</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="/master/agama"><i class="fa fa-circle-o"></i> Agama</a></li>
+          <li><a href="/master/disabilitas"><i class="fa fa-circle-o"></i> Disabilitas</a></li>
+          <li><a href="/master/carakb"><i class="fa fa-circle-o"></i> Cara KB</a></li>
+          <li><a href="/master/hubungan"><i class="fa fa-circle-o"></i> Hubungan Dl Keluarga</a></li>
+          <li><a href="/master/jabatan"><i class="fa fa-circle-o"></i> Jabatan</a></li>
+          <li><a href="/master/statuskawin"><i class="fa fa-circle-o"></i> Status Kawin</a></li>
+          <li><a href="/master/pekerjaan"><i class="fa fa-circle-o"></i> Pekerjaan</a></li>
+          <li><a href="/master/pendidikan"><i class="fa fa-circle-o"></i> Pendidikan</a></li>
+          <li><a href="/master/status"><i class="fa fa-circle-o"></i> Status</a></li>
+        </ul>
+      </li>
       <li class="header">Extra</li>
       <li><a href="/pengaturan"><i class="fa fa-circle-o text-red"></i> <span>Pengaturan</span></a></li>
-      <li><a href="/tentang"><i class="fa fa-circle-o text-red"></i> <span>Tentang SimDesa</span></a></li>
+      <li class="{{ Request::segment(1) === 'tentang' ? 'active' : null }}"><a href="/tentang"><i class="fa fa-circle-o text-red"></i> <span>Tentang SimDesa</span></a></li>
     </ul>
   </section>
   <!-- /.sidebar -->
