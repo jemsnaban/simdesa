@@ -4,12 +4,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Master Agama
+        Master Hubungan dalam Keluarga
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li>Master</li>
-        <li class="active">Agama</li>
+        <li class="active">Hubungan dl Keluarga</li>
       </ol>
 
       <br>
@@ -26,14 +26,14 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Agama</th>
+                  <th>Hubungan dalam Keluarga</th>
                   <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
-                  @foreach($agamas as $agama)
+                  @foreach($hubungans as $hubungan)
                       <tr>
-                          <td>{{ $agama->nama }}</td>
+                          <td>{{ $hubungan->nama }}</td>
                           <td style="text-align:left">
                               <div class="btn-group">
 
@@ -43,11 +43,11 @@
                                 <ul class="dropdown-menu" role="menu">
                                   <li>
                                     <a href="#" type="button" class="btnchange" data-toggle="modal" data-target="#myModalUpdate">Ubah</a>
-                                    <input type="hidden" class="id" name="id" value="{{ $agama->id }}">
-                                    <input type="hidden" class="nama" value="{{ $agama->nama }}">
+                                    <input type="hidden" class="id" name="id" value="{{ $hubungan->id }}">
+                                    <input type="hidden" class="nama" value="{{ $hubungan->nama }}">
                                   </li>
                                   <li>
-                                      <a href="{{ url('/master/agama/delete/'.$agama->id) }}">Sembunyikan</a>
+                                      <a href="{{ url('/master/hubungan/delete/'.$hubungan->id) }}">Sembunyikan</a>
                                   </li>
                                 </ul>
 
@@ -58,7 +58,7 @@
                 </tbody>
                 <tfoot>
                 <tr>
-                  <th>Agama</th>
+                  <th>Hubungan dalam Keluarga</th>
                   <th>Action</th>
                 </tr>
                 </tfoot>
@@ -72,7 +72,7 @@
 <!-- Modal create-->
 <div class="modal fade" id="myModalCreate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
-    <form action="/master/agama/create" method="post">
+    <form action="/master/hubungan/create" method="post">
       {{ csrf_field() }}
       <div class="modal-content">
         <div class="modal-header">
@@ -81,8 +81,8 @@
         </div>
         <div class="modal-body" id="form_create">
             <div class="form-group">
-              <label for="exampleInputEmail1">Agama</label>
-              <input type="text" class="form-control" name="nama" placeholder="Masukkan Agama">
+              <label for="exampleInputEmail1">Hubungan dalam Keluarga</label>
+              <input type="text" class="form-control" name="nama" placeholder="Masukkan Hubungan dalam Keluarga">
             </div>
         </div>
         <div class="modal-footer">
@@ -97,7 +97,7 @@
 <!-- Modal edit-->
 <div class="modal fade" id="myModalUpdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
-    <form action="/master/agama/update" method="post">
+    <form action="/master/hubungan/update" method="post">
       {{ csrf_field() }}
       <div class="modal-content">
         <div class="modal-header">
@@ -106,8 +106,8 @@
         </div>
         <div class="modal-body" id="form_update">
             <div class="form-group">
-              <label for="exampleInputEmail1">Agama</label>
-              <input type="text" class="form-control" name="nama" id="nama" placeholder="Masukkan Agama">
+              <label for="exampleInputEmail1">Hubungan dalam Keluarga</label>
+              <input type="text" class="form-control" name="nama" id="nama" placeholder="Masukkan Hubungan dalam Keluarga">
               <input type="hidden" name="id" id="id" value="">
             </div>
         </div>

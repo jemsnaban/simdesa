@@ -6,6 +6,15 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddSoftDeletesToAgamasTable' => $baseDir . '/database/migrations/2017_03_23_034301_add_soft_deletes_to_agamas_table.php',
+    'AddSoftDeletesToCacatsTable' => $baseDir . '/database/migrations/2017_03_23_043344_add_soft_deletes_to_cacats_table.php',
+    'AddSoftDeletesToCaraKbsTable' => $baseDir . '/database/migrations/2017_03_23_045253_add_soft_deletes_to_cara_kbs_table.php',
+    'AddSoftDeletesToHubungansTable' => $baseDir . '/database/migrations/2017_03_23_062920_add_soft_deletes_to_hubungans_table.php',
+    'AddSoftDeletesToJabatansTable' => $baseDir . '/database/migrations/2017_03_23_064601_add_soft_deletes_to_jabatans_table.php',
+    'AddSoftDeletesToKawinsTable' => $baseDir . '/database/migrations/2017_03_23_065807_add_soft_deletes_to_kawins_table.php',
+    'AddSoftDeletesToPekerjaansTable' => $baseDir . '/database/migrations/2017_03_23_071545_add_soft_deletes_to_pekerjaans_table.php',
+    'AddSoftDeletesToPendidikansTable' => $baseDir . '/database/migrations/2017_03_23_075338_add_soft_deletes_to_pendidikans_table.php',
+    'AddSoftDeletesToStatusesTable' => $baseDir . '/database/migrations/2017_03_23_081622_add_soft_deletes_to_statuses_table.php',
     'CreateAgamasTable' => $baseDir . '/database/migrations/2017_03_13_063234_create_agamas_table.php',
     'CreateCacatsTable' => $baseDir . '/database/migrations/2017_03_13_060708_create_cacats_table.php',
     'CreateCaraKbsTable' => $baseDir . '/database/migrations/2017_03_13_063225_create_cara_kbs_table.php',

@@ -4,12 +4,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Master Agama
+        Master Status
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li>Master</li>
-        <li class="active">Agama</li>
+        <li class="active">Status</li>
       </ol>
 
       <br>
@@ -26,14 +26,14 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Agama</th>
+                  <th>Status</th>
                   <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
-                  @foreach($agamas as $agama)
+                  @foreach($statuses as $status)
                       <tr>
-                          <td>{{ $agama->nama }}</td>
+                          <td>{{ $status->nama }}</td>
                           <td style="text-align:left">
                               <div class="btn-group">
 
@@ -43,11 +43,11 @@
                                 <ul class="dropdown-menu" role="menu">
                                   <li>
                                     <a href="#" type="button" class="btnchange" data-toggle="modal" data-target="#myModalUpdate">Ubah</a>
-                                    <input type="hidden" class="id" name="id" value="{{ $agama->id }}">
-                                    <input type="hidden" class="nama" value="{{ $agama->nama }}">
+                                    <input type="hidden" class="id" name="id" value="{{ $status->id }}">
+                                    <input type="hidden" class="nama" value="{{ $status->nama }}">
                                   </li>
                                   <li>
-                                      <a href="{{ url('/master/agama/delete/'.$agama->id) }}">Sembunyikan</a>
+                                      <a href="{{ url('/master/status/delete/'.$status->id) }}">Sembunyikan</a>
                                   </li>
                                 </ul>
 
@@ -58,7 +58,7 @@
                 </tbody>
                 <tfoot>
                 <tr>
-                  <th>Agama</th>
+                  <th>Status</th>
                   <th>Action</th>
                 </tr>
                 </tfoot>
@@ -72,7 +72,7 @@
 <!-- Modal create-->
 <div class="modal fade" id="myModalCreate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
-    <form action="/master/agama/create" method="post">
+    <form action="/master/status/create" method="post">
       {{ csrf_field() }}
       <div class="modal-content">
         <div class="modal-header">
@@ -81,8 +81,8 @@
         </div>
         <div class="modal-body" id="form_create">
             <div class="form-group">
-              <label for="exampleInputEmail1">Agama</label>
-              <input type="text" class="form-control" name="nama" placeholder="Masukkan Agama">
+              <label for="exampleInputEmail1">Status</label>
+              <input type="text" class="form-control" name="nama" placeholder="Masukkan Status">
             </div>
         </div>
         <div class="modal-footer">
@@ -97,7 +97,7 @@
 <!-- Modal edit-->
 <div class="modal fade" id="myModalUpdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
-    <form action="/master/agama/update" method="post">
+    <form action="/master/status/update" method="post">
       {{ csrf_field() }}
       <div class="modal-content">
         <div class="modal-header">
@@ -106,8 +106,8 @@
         </div>
         <div class="modal-body" id="form_update">
             <div class="form-group">
-              <label for="exampleInputEmail1">Agama</label>
-              <input type="text" class="form-control" name="nama" id="nama" placeholder="Masukkan Agama">
+              <label for="exampleInputEmail1">Status</label>
+              <input type="text" class="form-control" name="nama" id="nama" placeholder="Masukkan Status">
               <input type="hidden" name="id" id="id" value="">
             </div>
         </div>
@@ -141,9 +141,11 @@
     });
 
     $('#example1').on('click', 'tbody tr td li .btnchange',function (e) {
-      e.preventDefault();
+      //e.preventDefault();
       var id = $(this).parent().find('.id').val();
       var nama = $(this).parent().find('.nama').val();
+
+      console.log(id + nama);
 
       $('#form_update #nama').val(nama);
       $('#form_update #id').val(id);

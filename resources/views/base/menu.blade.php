@@ -96,7 +96,7 @@
         </ul>
       </li>
       <li><a href="/pengguna"><i class="fa fa-users"></i> <span>Pengguna</span></a></li>
-      <li class="treeview">
+      <li class="treeview {{ Request::segment(1) === 'master' ? 'active' : null }}">
         <a href="#">
           <i class="fa fa-sliders"></i>
           <span>Master</span>
@@ -105,15 +105,15 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="/master/agama"><i class="fa fa-circle-o"></i> Agama</a></li>
-          <li><a href="/master/disabilitas"><i class="fa fa-circle-o"></i> Disabilitas</a></li>
-          <li><a href="/master/carakb"><i class="fa fa-circle-o"></i> Cara KB</a></li>
-          <li><a href="/master/hubungan"><i class="fa fa-circle-o"></i> Hubungan Dl Keluarga</a></li>
-          <li><a href="/master/jabatan"><i class="fa fa-circle-o"></i> Jabatan</a></li>
-          <li><a href="/master/statuskawin"><i class="fa fa-circle-o"></i> Status Kawin</a></li>
-          <li><a href="/master/pekerjaan"><i class="fa fa-circle-o"></i> Pekerjaan</a></li>
-          <li><a href="/master/pendidikan"><i class="fa fa-circle-o"></i> Pendidikan</a></li>
-          <li><a href="/master/status"><i class="fa fa-circle-o"></i> Status</a></li>
+          <li class="{{ Request::segment(2) === 'agama' ? 'active' : null }}"><a href="/master/agama"><i class="fa fa-circle-o"></i> Agama</a></li>
+          <li class="{{ Request::segment(2) === 'disabilitas' ? 'active' : null }}"><a href="/master/disabilitas"><i class="fa fa-circle-o"></i> Disabilitas</a></li>
+          <li class="{{ Request::segment(2) === 'carakb' ? 'active' : null }}"><a href="/master/carakb"><i class="fa fa-circle-o"></i> Cara KB</a></li>
+          <li class="{{ Request::segment(2) === 'hubungan' ? 'active' : null }}"><a href="/master/hubungan"><i class="fa fa-circle-o"></i> Hubungan Dl Keluarga</a></li>
+          <li class="{{ Request::segment(2) === 'jabatan' ? 'active' : null }}"><a href="/master/jabatan"><i class="fa fa-circle-o"></i> Jabatan</a></li>
+          <li class="{{ Request::segment(2) === 'kawin' ? 'active' : null }}"><a href="/master/kawin"><i class="fa fa-circle-o"></i> Status Kawin</a></li>
+          <li class="{{ Request::segment(2) === 'pekerjaan' ? 'active' : null }}"><a href="/master/pekerjaan"><i class="fa fa-circle-o"></i> Pekerjaan</a></li>
+          <li class="{{ Request::segment(2) === 'pendidikan' ? 'active' : null }}"><a href="/master/pendidikan"><i class="fa fa-circle-o"></i> Pendidikan</a></li>
+          <li class="{{ Request::segment(2) === 'status' ? 'active' : null }}"><a href="/master/status"><i class="fa fa-circle-o"></i> Status</a></li>
         </ul>
       </li>
       <li class="header">Extra</li>

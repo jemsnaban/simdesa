@@ -73,10 +73,57 @@ Route::group(['middleware' => ['superadmin']], function ()
     Route::get('/desa/pemerintah/edit/{id}', 'PemerintahController@edit');
     Route::put('/desa/pemerintah/edit/{id}', 'PemerintahController@update');
 
+    Route::get('/desa/identitas', 'DesaController@index');
+
 
     Route::get('/tentang', function () {
         return view('tentang');
     });
 
-    Route::get('/master/agama', 'MasterController@agama');
+    //crud agama
+    Route::get('/master/agama', 'AgamaController@index');
+    Route::get('/master/agama/delete/{id}', 'AgamaController@destroy');
+    Route::post('/master/agama/update', 'AgamaController@update');
+    Route::post('/master/agama/create', 'AgamaController@store');
+
+    Route::get('/master/disabilitas', 'DisabilitasController@index');
+    Route::get('/master/disabilitas/delete/{id}', 'DisabilitasController@destroy');
+    Route::post('/master/disabilitas/update', 'DisabilitasController@update');
+    Route::post('/master/disabilitas/create', 'DisabilitasController@store');
+
+    Route::get('/master/carakb', 'CaraKbController@index');
+    Route::get('/master/carakb/delete/{id}', 'CaraKbController@destroy');
+    Route::post('/master/carakb/update', 'CaraKbController@update');
+    Route::post('/master/carakb/create', 'CaraKbController@store');
+
+    Route::get('/master/hubungan', 'HubunganController@index');
+    Route::get('/master/hubungan/delete/{id}', 'HubunganController@destroy');
+    Route::post('/master/hubungan/update', 'HubunganController@update');
+    Route::post('/master/hubungan/create', 'HubunganController@store');
+
+    Route::get('/master/jabatan', 'JabatanController@index');
+    Route::get('/master/jabatan/delete/{id}', 'JabatanController@destroy');
+    Route::post('/master/jabatan/update', 'JabatanController@update');
+    Route::post('/master/jabatan/create', 'JabatanController@store');
+
+    Route::get('/master/kawin', 'KawinController@index');
+    Route::get('/master/kawin/delete/{id}', 'KawinController@destroy');
+    Route::post('/master/kawin/update', 'KawinController@update');
+    Route::post('/master/kawin/create', 'KawinController@store');
+
+    Route::get('/master/pekerjaan', 'PekerjaanController@index');
+    Route::get('/master/pekerjaan/delete/{id}', 'PekerjaanController@destroy');
+    Route::post('/master/pekerjaan/update', 'PekerjaanController@update');
+    Route::post('/master/pekerjaan/create', 'PekerjaanController@store');
+
+    Route::get('/master/pendidikan', 'PendidikanController@index');
+    Route::get('/master/pendidikan/delete/{id}', 'PendidikanController@destroy');
+    Route::post('/master/pendidikan/update', 'PendidikanController@update');
+    Route::post('/master/pendidikan/create', 'PendidikanController@store');
+
+    Route::get('/master/status', 'StatusController@index');
+    Route::get('/master/status/delete/{id}', 'StatusController@destroy');
+    Route::post('/master/status/update', 'StatusController@update');
+    Route::post('/master/status/create', 'StatusController@store');
+
 });
