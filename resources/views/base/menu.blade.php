@@ -67,7 +67,7 @@
           <li><a href="/penduduk/kelompok"><i class="fa fa-circle-o"></i> Kelompok</a></li>
         </ul>
       </li>
-      <li class="treeview">
+      <li class="treeview {{ Request::segment(1) === 'surat' ? 'active' : null }}">
         <a href="#">
           <i class="fa fa-folder-open-o"></i>
           <span>Surat</span>
@@ -76,10 +76,10 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="/surat/cetak"><i class="fa fa-circle-o"></i> Cetak Surat</a></li>
-          <li><a href="/surat/keluar"><i class="fa fa-circle-o"></i> Surat Keluar</a></li>
-          <li><a href="/surat/master"><i class="fa fa-circle-o"></i> Master Surat</a></li>
-          <li><a href="/surat/panduan"><i class="fa fa-circle-o"></i> Panduan</a></li>
+          <li class="{{ Request::segment(2) === 'daftar' ? 'active' : null }}"><a href="/surat/daftar"><i class="fa fa-circle-o"></i> Cetak Surat</a></li>
+          <li class="{{ Request::segment(2) === 'keluar' ? 'active' : null }}"><a href="/surat/keluar"><i class="fa fa-circle-o"></i> Surat Keluar</a></li>
+          <li class="{{ Request::segment(2) === 'master' ? 'active' : null }}"><a href="/surat/master"><i class="fa fa-circle-o"></i> Master Surat</a></li>
+          <li class="{{ Request::segment(2) === 'panduan' ? 'active' : null }}"><a href="/surat/panduan"><i class="fa fa-circle-o"></i> Panduan</a></li>
         </ul>
       </li>
       <li class="treeview {{ Request::segment(1) === 'desa' ? 'active' : null }}">
