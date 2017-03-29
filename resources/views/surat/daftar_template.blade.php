@@ -5,14 +5,16 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Daftar Surat
+      Daftar Template Surat
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
       <li><a href="#">Surat</a></li>
-      <li class="active">Daftar Surat</li>
+      <li class="active">Daftar Template</li>
     </ol>
 
+    <br>
+    <a href="{{ url('/surat/create_template') }}" class="btn btn-primary btn-small">Buat Template Baru</a>
   </section>
 
   <!-- Main content -->
@@ -21,7 +23,7 @@
       <div class="col-xs-12">
         <div class="box">
           <div class="box-header">
-            <h3 class="box-title">Daftar Surat</h3>
+            <h3 class="box-title">Daftar template</h3>
           </div>
           <!-- /.box-header -->
           <div class="box-body">
@@ -44,7 +46,8 @@
                               <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                               Action   <span class="caret"></span></button>
                               <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/surat/cetak_surat/' . $template->id ) }}">Cetak</a></li>
+                                <li><a href="{{ url('/surat/edit_template/' . $template->id ) }}">Ubah</a></li>
+                                <li><a href="{{ url('/surat/deactivate_template/' . $template->id ) }}">Sembunyikan</a></li>
                               </ul>
                             </div>
                         </td>

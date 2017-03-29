@@ -37,7 +37,7 @@ class JabatanController extends Controller
   {
     $id = $request->id;
 
-    $jabatans = Jabatan::findOrFail($id);
+    $jabatan = Jabatan::findOrFail($id);
     //dd($jabatan);
     $jabatan->delete();
 

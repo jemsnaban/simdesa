@@ -76,9 +76,9 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li class="{{ Request::segment(2) === 'daftar' ? 'active' : null }}"><a href="/surat/daftar"><i class="fa fa-circle-o"></i> Cetak Surat</a></li>
+          <li class="{{ strpos(Request::segment(2), 'template') !== false ? 'active' : null }}"><a href="/surat/daftar_template"><i class="fa fa-circle-o"></i> Master Surat</a></li>
+          <li class="{{ strpos(Request::segment(2), 'surat') !== false ? 'active' : null }}"><a href="/surat/daftar_surat"><i class="fa fa-circle-o"></i> Cetak Surat</a></li>
           <li class="{{ Request::segment(2) === 'keluar' ? 'active' : null }}"><a href="/surat/keluar"><i class="fa fa-circle-o"></i> Surat Keluar</a></li>
-          <li class="{{ Request::segment(2) === 'master' ? 'active' : null }}"><a href="/surat/master"><i class="fa fa-circle-o"></i> Master Surat</a></li>
           <li class="{{ Request::segment(2) === 'panduan' ? 'active' : null }}"><a href="/surat/panduan"><i class="fa fa-circle-o"></i> Panduan</a></li>
         </ul>
       </li>

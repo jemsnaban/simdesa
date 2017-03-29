@@ -86,7 +86,7 @@ try {
 // Saving the document as HTML file...
 $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'HTML');
 try {
-  $objWriter->save('helloWorld.html');
+  $objWriter->save('helloWorld.blade.php');
 } catch (Exception $e) {
 
 }
@@ -207,6 +207,14 @@ Route::group(['middleware' => ['superadmin']], function ()
     Route::post('/master/status/update', 'StatusController@update');
     Route::post('/master/status/create', 'StatusController@store');
 
-    Route::get('/surat/daftar', 'SuratController@index');
+    Route::get('/surat/daftar_template', 'SuratTemplateController@index');
+    Route::get('/surat/create_template', 'SuratTemplateController@create');
+    Route::post('/surat/create_template', 'SuratTemplateController@store');
+    Route::get('/surat/edit_template/{id}', 'SuratTemplateController@edit');
+    Route::put('/surat/edit_template/{id}', 'SuratTemplateController@update');
+    Route::get('/surat/deactivate_template/{id}', 'SuratTemplateController@delete');
+
+    Route::get('/surat/daftar_surat', 'SuratController@index');
+    Route::get('/surat/cetak_surat/{id}', 'SuratController@edit_details');
 
 });
