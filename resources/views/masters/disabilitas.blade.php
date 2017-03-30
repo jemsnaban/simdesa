@@ -34,13 +34,13 @@
                   @foreach($cacats as $cacat)
                       <tr>
                           <td>{{ $cacat->nama }}</td>
-                          <td style="text-align:left">
+                          <td style="text-align:center">
                               <div class="btn-group">
 
                                 <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                                 Action   <span class="caret"></span></button>
 
-                                <ul class="dropdown-menu" role="menu">
+                                <ul class="dropdown-menu dropdown-menu-right" role="menu">
                                   <li>
                                     <a href="#" type="button" class="btnchange" data-toggle="modal" data-target="#myModalUpdate">Ubah</a>
                                     <input type="hidden" class="id" name="id" value="{{ $cacat->id }}">

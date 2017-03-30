@@ -45,10 +45,10 @@
                         <td>{{ $keluarga->kk_nik_kepala }}</td>
                         <td>{{ $keluarga->kk_alamat }}</td>
                         <td>{{ $keluarga->created_at }}</td>
-                        <td style="text-align:left"><div class="btn-group">
+                        <td style="text-align:center"><div class="btn-group">
                               <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                               Action   <span class="caret"></span></button>
-                              <ul class="dropdown-menu" role="menu">
+                              <ul class="dropdown-menu dropdown-menu-right" role="menu">
                                 <li><a href="{{ url('/penduduk/keluarga/edit/' . $keluarga->id ) }}">Ubah</a></li>
                               </ul>
                             </div>

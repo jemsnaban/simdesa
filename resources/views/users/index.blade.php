@@ -5,17 +5,15 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Pemerintah Desa
+      Informasi Pengguna
     </h1>
     <ol class="breadcrumb">
       <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-      <li><a href="#">Desa</a></li>
-      <li class="active">Pemerintah</li>
+      <li class="active">Pengguna</li>
     </ol>
 
     <br>
-    <a href="{{ url('/desa/pemerintah/create') }}" class="btn btn-primary">Input Data baru</a>
-    <a href="{{ url('/penduduk/wilayah/rt/create') }}" class="btn btn-warning">Lihat Diagram</a>
+    <a href="{{ url('/penduduk/wilayah/dusun/create') }}" class="btn btn-primary">Input Pengguna Baru</a>
   </section>
 
   <!-- Main content -->
@@ -24,7 +22,7 @@
       <div class="col-xs-12">
         <div class="box">
           <div class="box-header">
-            <h3 class="box-title">Data Table With Full Features</h3>
+            <h3 class="box-title">Daftar Pengguna Sistem</h3>
           </div>
           <!-- /.box-header -->
           <div class="box-body">
@@ -32,22 +30,26 @@
               <thead>
               <tr>
                 <th>Nama</th>
-                <th>NIP</th>
-                <th>Jabatan</th>
+                <th>Email</th>
+                <th>Role / Peran</th>
+                <th>Tanggal Daftar</th>
+                <th>Terakhir Masuk/Login</th>
                 <th>Action</th>
               </tr>
               </thead>
               <tbody>
-                @foreach($pemerintahs as $pemerintah)
+                @foreach($users as $user)
                     <tr>
-                        <td>{{ $pemerintah->nama }}</td>
-                        <td>{{ $pemerintah->nip }}</td>
-                        <td>{{ $pemerintah->nama_jabatan }}</td>
+                        <td>{{ $user->first_name . " " . $user->last_name }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td>{{ $user->role }}</td>
+                        <td>{{ Carbon\Carbon::parse($user->created_at)->toFormattedDateString() }}</td>
+                        <td>{{ $user->last_login }}</td>
                         <td style="text-align:center"><div class="btn-group">
                               <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                               Action   <span class="caret"></span></button>
                               <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                                <li><a href="{{ url('/desa/pemerintah/edit/' . $pemerintah->id ) }}">Ubah</a></li>
+                                <li><a href="{{ url('/user/edit/' . $user->id ) }}">Ubah</a></li>
                               </ul>
                             </div>
                         </td>
@@ -57,8 +59,10 @@
               <tfoot>
               <tr>
                 <th>Nama</th>
-                <th>NIP</th>
-                <th>Jabatan</th>
+                <th>Email</th>
+                <th>Role / Peran</th>
+                <th>Tanggal Daftar</th>
+                <th>Terakhir Masuk/Login</th>
                 <th>Action</th>
               </tr>
               </tfoot>

@@ -14,7 +14,7 @@
     </ol>
 
     <br>
-    <a href="{{ url('/surat/create_template') }}" class="btn btn-primary btn-small">Buat Template Baru</a>
+    <!--a href="{{ url('/surat/create_template') }}" class="btn btn-primary btn-small">Buat Template Baru</a-->
   </section>
 
   <!-- Main content -->
@@ -42,11 +42,11 @@
                         <td>{{ $template->nama }}</td>
                         <td>{{ $template->kode }}</td>
                         <td>{{ $template->keterangan }}</td>
-                        <td style="text-align:left"><div class="btn-group">
+                        <td style="text-align:center"><div class="btn-group">
                               <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                               Action   <span class="caret"></span></button>
-                              <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/surat/edit_template/' . $template->id ) }}">Ubah</a></li>
+                              <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                                <!--li><a href="{{ url('/surat/edit_template/' . $template->id ) }}">Ubah</a></li-->
                                 <li><a href="{{ url('/surat/deactivate_template/' . $template->id ) }}">Sembunyikan</a></li>
                               </ul>
                             </div>

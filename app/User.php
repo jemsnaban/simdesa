@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Cartalyst\Sentinel\Users\EloquentUser;
+use Carbon\Carbon;
 
 class User extends EloquentUser
 {
@@ -25,5 +26,9 @@ class User extends EloquentUser
      */
     protected $hidden = [
         'password', 'remember_token',
+    ];
+
+    protected $dates = [
+      'created_at', 'last_login',
     ];
 }

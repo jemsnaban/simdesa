@@ -8,8 +8,8 @@
         <img src="/assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
       </div>
       <div class="pull-left info">
-        <p>Super Admin</p>
-        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        <p>{{ Sentinel::getUser()->first_name . " " . Sentinel::getUser()->last_name}}</p>
+        <a href="#"><i class="fa fa-circle text-success"></i> {{ Sentinel::getUser()->roles()->first()->name }}</a>
       </div>
     </div>
     <!-- search form -->
@@ -76,9 +76,10 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li class="{{ strpos(Request::segment(2), 'template') !== false ? 'active' : null }}"><a href="/surat/daftar_template"><i class="fa fa-circle-o"></i> Master Surat</a></li>
+          <!--li class="{{ strpos(Request::segment(2), 'template') !== false ? 'active' : null }}"><a href="/surat/daftar_template"><i class="fa fa-circle-o"></i> Master Surat</a></li-->
           <li class="{{ strpos(Request::segment(2), 'surat') !== false ? 'active' : null }}"><a href="/surat/daftar_surat"><i class="fa fa-circle-o"></i> Cetak Surat</a></li>
           <li class="{{ Request::segment(2) === 'keluar' ? 'active' : null }}"><a href="/surat/keluar"><i class="fa fa-circle-o"></i> Surat Keluar</a></li>
+          <li class="{{ Request::segment(2) === 'masuk' ? 'active' : null }}"><a href="/surat/masuk"><i class="fa fa-circle-o"></i> Surat Masuk</a></li>
           <li class="{{ Request::segment(2) === 'panduan' ? 'active' : null }}"><a href="/surat/panduan"><i class="fa fa-circle-o"></i> Panduan</a></li>
         </ul>
       </li>
@@ -95,7 +96,7 @@
           <li class="{{ Request::segment(2) === 'pemerintah' ? 'active' : null }}"><a href="/desa/pemerintah"><i class="fa fa-circle-o"></i> Pemerintah Desa</a></li>
         </ul>
       </li>
-      <li><a href="/pengguna"><i class="fa fa-users"></i> <span>Pengguna</span></a></li>
+      <li class="{{ Request::segment(1) === 'pengguna' ? 'active' : null }}"><a href="/pengguna"><i class="fa fa-users"></i> <span>Pengguna</span></a></li>
       <li class="treeview {{ Request::segment(1) === 'master' ? 'active' : null }}">
         <a href="#">
           <i class="fa fa-sliders"></i>
@@ -117,7 +118,7 @@
         </ul>
       </li>
       <li class="header">Extra</li>
-      <li><a href="/pengaturan"><i class="fa fa-circle-o text-red"></i> <span>Pengaturan</span></a></li>
+      <li class="{{ Request::segment(1) === 'pengaturan' ? 'active' : null }}"><a href="/pengaturan"><i class="fa fa-circle-o text-red"></i> <span>Pengaturan</span></a></li>
       <li class="{{ Request::segment(1) === 'tentang' ? 'active' : null }}"><a href="/tentang"><i class="fa fa-circle-o text-red"></i> <span>Tentang SimDesa</span></a></li>
     </ul>
   </section>

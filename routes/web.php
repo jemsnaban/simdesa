@@ -215,6 +215,9 @@ Route::group(['middleware' => ['superadmin']], function ()
     Route::get('/surat/deactivate_template/{id}', 'SuratTemplateController@delete');
 
     Route::get('/surat/daftar_surat', 'SuratController@index');
-    Route::get('/surat/cetak_surat/{id}', 'SuratController@edit_details');
+    Route::get('/surat/cetak_surat/{slug}', 'SuratController@edit_details');
+    Route::put('/surat/preview/{slug}', 'SuratController@preview'); //agak aneh sih wwkkw
+
+    Route::get('/pengguna', 'UsersController@index');
 
 });

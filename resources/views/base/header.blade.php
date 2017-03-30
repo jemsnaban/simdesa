@@ -60,7 +60,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="/assets/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Super Admin</span>
+              <span class="hidden-xs">{{ Sentinel::getUser()->first_name . " " . Sentinel::getUser()->last_name}}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -68,8 +68,9 @@
                 <img src="/assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  {{ Sentinel::getUser()->first_name }} - Kepala Desa
-                  <small>Member since Nov. 2012</small>
+                  {{ Sentinel::getUser()->first_name . " " . Sentinel::getUser()->last_name}} -
+                  {{ Sentinel::getUser()->roles()->first()->name }}
+                  <small>Member since {{ Sentinel::getUser()->created_at->subDays(24)->diffForHumans() }}</small>
                 </p>
               </li>
               <!-- Menu Footer-->
