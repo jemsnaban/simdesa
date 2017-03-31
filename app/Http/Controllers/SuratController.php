@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\SuratTemplate;
 use App\Desa;
+use PDF;
 
 class SuratController extends Controller
 {
@@ -34,9 +35,19 @@ class SuratController extends Controller
     $infos = $request->all();
     $desa = Desa::all()->first();
 
-    //dd($desa);
+    $data['infos'] = $infos;
+    $data['desa'] = $desa;
 
-    return view('surat.templates.' . $slug . '.preview', compact('infos', 'desa'));
+    //dd($desa);
+    $pdf = PDF::loadView('surat.templates.' . $slug . '.preview', $data);
+    return $pdf->download('invoice.pdf');
+    //return view('surat.templates.' . $slug . '.preview', compact('infos', 'desa'));
+  }
+
+  public function pdf($data)
+  {
+    $pdf = PDF::loadView('pdf.invoice', $data);
+    return $pdf->download('invoice.pdf');
   }
 
 }

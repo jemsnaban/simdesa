@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link rel="stylesheet" href="/assets/letter/css/960.css" type="text/css" media="screen">
     <link rel="stylesheet" href="/assets/letter/css/screen.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="/assets/letter/css/print-preview.css" type="text/css" media="screen">
@@ -19,6 +20,11 @@
           $.printPreview.loadPrintPreview();
       });
     </script>
+    <style>
+        .page-break {
+            page-break-after: always;
+        }
+    </style>
   </head>
   <body>
         <div id="content" class="container_12 clearfix">

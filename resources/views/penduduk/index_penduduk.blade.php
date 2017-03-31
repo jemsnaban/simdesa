@@ -110,7 +110,10 @@
 <script>
   $(function () {
     $("#example1").DataTable( {
-        responsive: true
+        responsive: true,
+        buttons: [
+           'copy', 'excel', 'pdf'
+       ]
     });
   });
 </script>
