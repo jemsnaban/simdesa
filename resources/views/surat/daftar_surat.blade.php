@@ -77,6 +77,7 @@
 @section('content-css')
 <!-- DataTables -->
 <link rel="stylesheet" href="/assets/plugins/datatables/dataTables.bootstrap.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css">
 @endsection
 
 @section('content-js')
@@ -88,7 +89,20 @@
 
 <script>
   $(function () {
-    $("#example1").DataTable();
+    $("#example1").DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'copyHtml5',
+                exportOptions: {
+                 columns: ':contains("Office")'
+                }
+            },
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5'
+        ]
+    });
   });
 </script>
 @endsection

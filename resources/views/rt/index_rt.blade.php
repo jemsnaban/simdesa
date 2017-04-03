@@ -16,7 +16,7 @@
     </ol>
 
     <br>
-    <a href="{{ url('/penduduk/wilayah/rt/create') }}" class="btn btn-primary">Input RT baru</a>
+    <a href="{{ url('/wilayah/rt/create') }}" class="btn btn-primary">Input RT baru</a>
   </section>
 
   <!-- Main content -->
@@ -54,7 +54,7 @@
                               <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                               Action   <span class="caret"></span></button>
                               <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                                <li><a href="{{ url('/penduduk/wilayah/rt/edit/' . $rt->id ) }}">Ubah</a></li>
+                                <li><a href="{{ url('/wilayah/rt/edit/' . $rt->id ) }}">Ubah</a></li>
                               </ul>
                             </div>
                         </td>

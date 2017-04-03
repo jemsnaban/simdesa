@@ -24,6 +24,16 @@
         .page-break {
             page-break-after: always;
         }
+        table {
+            display: table;
+        }
+        tr {
+            display: table-row;
+        }
+        .highlight {
+            background-color: greenyellow;
+            display: table-cell;
+        }
     </style>
   </head>
   <body>
@@ -55,10 +65,12 @@
         Kabupaten {{ $desa->kecamatan }}, Provinsi {{ $desa->provinsi }} menerangkan dengan sebenarnya bahwa:  </td></tr>
         </table>
         <div id="isi3">
-        <tr></tr>
-        <tr></tr>
-        <tr></tr>
-        <tr><td>
+        <table>
+          <tr></tr>
+          <tr></tr>
+          <tr></tr>
+          <tr></tr><td></td>
+        </table>
         <table width="100%">
         <tr><td width="20%">Nama Lengkap</td><td width="2%">:</td><td width="64%">{{ $infos['pemohon_nama'] }}</td></tr>
         <tr><td>Nomor KTP</td><td>:</td><td></td></tr>

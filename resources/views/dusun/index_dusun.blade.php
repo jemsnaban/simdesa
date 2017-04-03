@@ -16,9 +16,9 @@
     </ol>
 
     <br>
-    <a href="{{ url('/penduduk/wilayah/dusun/create') }}" class="btn btn-primary">Input dusun baru</a>
-    <a href="{{ url('/penduduk/wilayah/rw/create') }}" class="btn btn-success">Input RW baru</a>
-    <a href="{{ url('/penduduk/wilayah/rt/create') }}" class="btn btn-warning">Input RT baru</a>
+    <a href="{{ url('/wilayah/dusun/create') }}" class="btn btn-primary">Input dusun baru</a>
+    <a href="{{ url('/wilayah/rw/create') }}" class="btn btn-success">Input RW baru</a>
+    <a href="{{ url('/wilayah/rt/create') }}" class="btn btn-warning">Input RT baru</a>
   </section>
 
   <!-- Main content -->
@@ -56,7 +56,7 @@
                               <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                               Action   <span class="caret"></span></button>
                               <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                                <li><a href="{{ url('/penduduk/wilayah/dusun/edit/' . $dusun->id ) }}">Ubah</a></li>
+                                <li><a href="{{ url('/wilayah/dusun/edit/' . $dusun->id ) }}">Ubah</a></li>
                               </ul>
                             </div>
                         </td>

@@ -110,26 +110,26 @@ Route::group(['middleware' => ['superadmin']], function ()
     Route::get('/dashboard/laporan', 'DashboardController@laporan');
 
     //crud wilayah dusun
-    Route::get('/penduduk/wilayah/dusun', 'DusunController@index');
-    Route::get('/penduduk/wilayah/dusun/create', 'DusunController@create');
-    Route::post('/penduduk/wilayah/dusun/create', 'DusunController@store');
-    Route::get('/penduduk/wilayah/dusun/edit/{id}', 'DusunController@edit');
-    Route::put('/penduduk/wilayah/dusun/edit/{id}', 'DusunController@update');
+    Route::get('/wilayah/dusun', 'DusunController@index');
+    Route::get('/wilayah/dusun/create', 'DusunController@create');
+    Route::post('/wilayah/dusun/create', 'DusunController@store');
+    Route::get('/wilayah/dusun/edit/{id}', 'DusunController@edit');
+    Route::put('/wilayah/dusun/edit/{id}', 'DusunController@update');
     Route::get('searchdusun',array('as'=>'searchdusun','uses'=>'DusunController@autoComplete'));
 
     //crud RW
-    Route::get('/penduduk/wilayah/rw', 'RWController@index');
-    Route::get('/penduduk/wilayah/rw/create', 'RWController@create');
-    Route::post('/penduduk/wilayah/rw/create', 'RWController@store');
-    Route::get('/penduduk/wilayah/rw/edit/{id}', 'RWController@edit');
-    Route::put('/penduduk/wilayah/rw/edit/{id}', 'RWController@update');
+    Route::get('/wilayah/rw', 'RWController@index');
+    Route::get('/wilayah/rw/create', 'RWController@create');
+    Route::post('/wilayah/rw/create', 'RWController@store');
+    Route::get('/wilayah/rw/edit/{id}', 'RWController@edit');
+    Route::put('/wilayah/rw/edit/{id}', 'RWController@update');
 
     //crud rt
-    Route::get('/penduduk/wilayah/rt', 'RTController@index');
-    Route::get('/penduduk/wilayah/rt/create', 'RTController@create');
-    Route::post('/penduduk/wilayah/rt/create', 'RTController@store');
-    Route::get('/penduduk/wilayah/rt/edit/{id}', 'RTController@edit');
-    Route::put('/penduduk/wilayah/rt/edit/{id}', 'RTController@update');
+    Route::get('/wilayah/rt', 'RTController@index');
+    Route::get('/wilayah/rt/create', 'RTController@create');
+    Route::post('/wilayah/rt/create', 'RTController@store');
+    Route::get('/wilayah/rt/edit/{id}', 'RTController@edit');
+    Route::put('/wilayah/rt/edit/{id}', 'RTController@update');
 
     //crud keluraga
     Route::get('/penduduk/keluarga', 'KeluargaController@index');

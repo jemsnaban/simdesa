@@ -24,7 +24,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" method="post" action="/penduduk/wilayah/rt/edit/{{ $rt->id }}">
+            <form role="form" method="post" action="/wilayah/rt/edit/{{ $rt->id }}">
               {{ method_field('PUT')}}
               {{ csrf_field() }}
               <div class="box-body">

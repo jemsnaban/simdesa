@@ -24,7 +24,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form" method="post" action="/penduduk/wilayah/rw/create">
+            <form role="form" method="post" action="/wilayah/rw/create">
               {{ csrf_field() }}
               <div class="box-body">
                 <div class="form-group">
