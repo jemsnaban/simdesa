@@ -89,6 +89,7 @@
               <div class="box-footer">
                 <div class="col-md-12">
                   <button type="submit" class="btn btn-primary">Cetak Surat</button>
+                  <button type="submit" class="btn btn-success">Export PDF</button>
                   <input type="hidden" name="template_id" value="{{ $surat->id }}">
                   <a href="{{ url()->previous() }}" class="btn btn-danger">Batal</a>
                 </div>
