@@ -76,7 +76,7 @@
 
 @section('content-css')
 <!-- DataTables -->
-<link rel="stylesheet" href="/assets/plugins/datatables/dataTables.bootstrap.css">
+<link rel="stylesheet" href="/assets/plugins/datatables/media/css/dataTables.bootstrap.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css">
 @endsection
 
@@ -84,8 +84,8 @@
 <!-- page script -->
 
 <!-- DataTables -->
-<script src="/assets/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="/assets/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="/assets/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
+<script src="/assets/plugins/datatables/media/js/dataTables.bootstrap.min.js"></script>
 
 <script>
   $(function () {

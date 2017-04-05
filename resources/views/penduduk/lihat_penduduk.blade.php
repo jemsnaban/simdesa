@@ -28,7 +28,6 @@
                 Action   <span class="caret"></span></button>
                 <ul class="dropdown-menu dropdown-menu-right" role="menu">
                   <li><a href="{{ url('/penduduk/list/edit/' . $penduduk->id) }}">Ubah</a></li>
-                  <li><a href="{{ url('/penduduk/list/detail/' . $penduduk->id ) }}">Lihat</a></li>
                   <li><a href="{{ url('/penduduk/list/detail/' . $penduduk->id ) }}">Cetak Biodata</a></li>
                 </ul>
               </div>

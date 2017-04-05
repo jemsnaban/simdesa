@@ -57,6 +57,7 @@ Route::group(['middleware' => ['superadmin']], function ()
     Route::post('/penduduk/keluarga/create', 'KeluargaController@store');
     Route::get('/penduduk/keluarga/edit/{id}', 'KeluargaController@edit');
     Route::put('/penduduk/keluarga/edit/{id}', 'KeluargaController@update');
+    Route::get('/penduduk/keluarga/detail/{id}', 'KeluargaController@detail');
 
     //crud penduduk
     Route::get('/penduduk/list', 'PendudukController@index');

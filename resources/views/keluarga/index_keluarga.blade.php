@@ -50,6 +50,7 @@
                               Action   <span class="caret"></span></button>
                               <ul class="dropdown-menu dropdown-menu-right" role="menu">
                                 <li><a href="{{ url('/penduduk/keluarga/edit/' . $keluarga->id ) }}">Ubah</a></li>
+                                <li><a href="{{ url('/penduduk/keluarga/detail/' . $keluarga->id ) }}">Lihat</a></li>
                               </ul>
                             </div>
                         </td>
@@ -82,15 +83,15 @@
 
 @section('content-css')
 <!-- DataTables -->
-<link rel="stylesheet" href="/assets/plugins/datatables/dataTables.bootstrap.css">
+<link rel="stylesheet" href="/assets/plugins/datatables/media/css/dataTables.bootstrap.css">
 @endsection
 
 @section('content-js')
 <!-- page script -->
 
 <!-- DataTables -->
-<script src="/assets/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="/assets/plugins/datatables/dataTables.bootstrap.min.js"></script>
+<script src="/assets/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
+<script src="/assets/plugins/datatables/media/js/dataTables.bootstrap.min.js"></script>
 
 <script>
   $(function () {

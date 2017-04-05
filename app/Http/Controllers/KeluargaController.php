@@ -46,5 +46,22 @@ class KeluargaController extends Controller
     return redirect('/penduduk/keluarga');
   }
 
+  public function detail($id)
+  {
+    $keluarga = DB::table('keluargas AS a')
+              ->leftJoin('penduduks AS b', 'b.nik', '=', 'a.kk_nik_kepala')
+              ->select('a.*', 'b.nama as kepala_keluarga', 'b.*')
+              ->where('a.id', '=', $id)
+              ->get()->first();
+
+    $anggotas = Penduduk::where('no_kk', $keluarga->kk_no)
+              ->where('nik', '!=' , $keluarga->kk_nik_kepala)
+              ->get();
+
+    //dd($anggotas);
+    //dd($keluarga);
+    return view('keluarga.lihat_keluarga', compact('keluarga', 'anggotas'));
+  }
+
 
 }
