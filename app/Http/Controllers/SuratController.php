@@ -39,9 +39,9 @@ class SuratController extends Controller
     $data['desa'] = $desa;
 
     //dd($desa);
-    $pdf = PDF::loadView('surat.templates.' . $slug . '.preview', $data);
-    return $pdf->download('invoice.pdf');
-    //return view('surat.templates.' . $slug . '.preview', compact('infos', 'desa'));
+    //$pdf = PDF::loadView('surat.templates.' . $slug . '.preview', $data);
+    //return $pdf->download('invoice.pdf');
+    return view('surat.templates.' . $slug . '.preview', compact('infos', 'desa'));
   }
 
   public function pdf($data)

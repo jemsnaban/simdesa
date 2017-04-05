@@ -49,21 +49,19 @@
               </tr>
 
               <tr>
-                <td>
-                   <div class="header">
-                    <h4 class="kop">PEMERINTAH KABUPATEN {{ strtoupper($desa->kabupaten) }} </h4>
-                    <h4 class="kop">KECAMATAN {{ strtoupper($desa->kecamatan) }} </h4>
-                    <h4 class="kop">DESA {{ strtoupper($desa->nama) }}</h4>
-                    <h5 class="kop2">{{ strtoupper($desa->alamat_kantor) }}</h5>
+                <td><div class="header">
+                  <h4 class="kop">PEMERINTAH KABUPATEN {{ strtoupper($desa->kabupaten) }} </h4>
+                  <h4 class="kop">KECAMATAN {{ strtoupper($desa->kecamatan) }} </h4>
+                  <h4 class="kop">DESA {{ strtoupper($desa->nama) }}</h4>
+                  <h5 class="kop2">{{ strtoupper($desa->alamat_kantor) }}</h5>
 
-                    <div style="text-align: center;">
-                      <hr>
+                  <div style="text-align: center;">
+                    <hr>
 
-                      <div align="center"><u><h4  class="kop">SURAT KETERANGAN</h4></u></div>
-                      <div align="center"><h4  class="kop">Nomor : {{ $infos['nomor_surat'] }}</h4></div>
-                    </div>
+                    <div align="center"><u><h4  class="kop">SURAT KETERANGAN</h4></u></div>
+                    <div align="center"><h4  class="kop">Nomor : {{ $infos['nomor_surat'] }}</h4></div>
                   </div>
-                </td>
+                </div></td>
               </tr>
             </table>
 
@@ -75,9 +73,9 @@
             </table>
             <div id="isi3">
               <table>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
                 <tr></tr>
               </table>
               <table width="100%">
@@ -96,56 +94,58 @@
                 <tr><td>Berlaku mulai </td><td>:</td><td>{{ $infos['start_date'] }} sampai dengan  {{ $infos['end_date'] }}</td></tr>
               </table>
               <table width="100%">
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td><td  class="indentasi">Demikian Surat Keterangan ini  kami buat untuk dapat dipergunakan sebagaimana mestinya. </td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr><td  class="indentasi">Demikian Surat Keterangan ini  kami buat untuk dapat dipergunakan sebagaimana mestinya. </td></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
+                <tr></tr>
               </table>
             </div>
             <table width="100%">
-              <tr><td></td></tr>
-              <tr><td></td></tr>
-              <tr><td></td></tr>
-              <tr><td></td></tr>
-              <tr><td></td></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
               <tr><td></td><td width="30%"></td><td  align="center">, </td></tr>
               <tr><td></td><td width="30%"></td><td align="center"> {{ $desa->nama }}</td></tr>
-              <tr><td></td></tr>
-              <tr><td></td></tr>
-              <tr><td></td></tr>
-              <tr><td></td></tr>
-              <tr><td></td></tr>
-              <tr><td></td></tr>
-              <tr><td></td></tr>
-              <tr><td></td></tr>
-              <tr><td></td></tr>
-              <tr><td></td></tr>
-              <tr><td></td></tr>
-              <tr><td></td></tr>
-              <tr><td></td></tr>
-              <tr><td></td></tr>
-              <tr><td></td></tr>
-              <tr><td></td></tr>
-              <tr><td></td></tr>
-              <tr><td></td></tr>
-              <tr><td></td></tr>
-              <tr><td></td></tr>
-              <tr><td></td></tr>
-              <tr><td></td></tr>
-              <tr><td></td></tr>
-              <tr><td></td></tr>
-              <tr><td></td></tr>
-              <tr><td></td></tr>
-              <tr><td></td></tr>
-              <tr><td></td></tr>
-              <tr><td></td></tr>
-              <tr><td></td></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
+              <tr></tr>
               <tr><td></td><td align="center">( {{ $desa->nama }} )</td></tr>
             </table>
 

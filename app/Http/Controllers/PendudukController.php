@@ -128,4 +128,25 @@ class PendudukController extends Controller
         else
             return ['value'=>'No Result Found','id'=>'', 'nik' => ''];
     }
+
+    public function detail($id)
+    {
+      $penduduk = DB::table('penduduks AS a')
+            ->leftJoin('agamas AS b', 'b.id', '=', 'a.agama')
+            ->leftJoin('pendidikans AS c', 'c.id', '=', 'a.pendidikan')
+            ->leftJoin('pekerjaans AS d', 'd.id', '=', 'a.pekerjaan')
+            ->leftJoin('kawins AS e', 'e.id', '=', 'a.status_kawin')
+            ->leftJoin('hubungans AS f', 'f.id', '=', 'a.hubungan')
+            ->leftJoin('cacats AS g', 'g.id', '=', 'a.cacat')
+            ->leftJoin('cara_kbs AS h', 'h.id', '=', 'a.cara_kb')
+            ->leftJoin('statuses AS i', 'i.id', '=', 'a.status')
+            ->select('a.*', 'b.nama AS agama', 'c.nama as pendidikan', 'd.nama as pekerjaan',
+            'e.nama as status_kawin', 'f.nama as hubungan', 'g.nama as cacat', 'h.nama as cara_kb', 'i.nama as status')
+            ->where('a.id', '=', $id)
+            ->get()->first();
+
+      //dd($penduduks);
+
+      return view('penduduk.lihat_penduduk')->with(compact('penduduk'));
+    }
 }

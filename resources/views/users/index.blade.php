@@ -43,8 +43,8 @@
                         <td>{{ $user->first_name . " " . $user->last_name }}</td>
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->role }}</td>
-                        <td>{{ Carbon\Carbon::parse($user->created_at)->toFormattedDateString() }}</td>
-                        <td>{{ $user->last_login }}</td>
+                        <td>{{ Carbon\Carbon::parse($user->created_at)->toDayDateTimeString() }}</td>
+                        <td>{{ Carbon\Carbon::parse($user->last_login)->toDayDateTimeString() }}</td>
                         <td style="text-align:center"><div class="btn-group">
                               <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                               Action   <span class="caret"></span></button>

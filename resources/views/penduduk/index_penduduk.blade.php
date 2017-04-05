@@ -55,11 +55,13 @@
                       <td>{{ $penduduk->pendidikan }}</td>
                       <td>{{ $penduduk->pekerjaan }}</td>
                       <td>{{ $penduduk->status_kawin }}</td>
-                      <td style="text-align:center"><div class="btn-group">
+                      <td style="text-align:center">
+                          <div class="btn-group">
                             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                             Action   <span class="caret"></span></button>
                             <ul class="dropdown-menu dropdown-menu-right" role="menu">
                               <li><a href="{{ url('/penduduk/list/edit/' . $penduduk->id ) }}">Ubah</a></li>
+                              <li><a href="{{ url('/penduduk/list/detail/' . $penduduk->id ) }}">Lihat</a></li>
                             </ul>
                           </div>
                       </td>
