@@ -55,7 +55,7 @@ class KeluargaController extends Controller
               ->get()->first();
 
     $anggotas = Penduduk::where('no_kk', $keluarga->kk_no)
-              ->where('nik', '!=' , $keluarga->kk_nik_kepala)
+              //->where('nik', '!=' , $keluarga->kk_nik_kepala)
               ->get();
 
     //dd($anggotas);

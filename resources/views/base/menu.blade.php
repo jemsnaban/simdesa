@@ -49,7 +49,7 @@
         <ul class="treeview-menu">
           <li class="{{ Request::segment(2) === 'keluarga' ? 'active' : null }}"><a href="/penduduk/keluarga"><i class="fa fa-circle-o"></i> Keluarga</a></li>
           <li class="{{ Request::segment(2) === 'list' ? 'active' : null }}"><a href="/penduduk/list"><i class="fa fa-circle-o"></i> Penduduk</a></li>
-          <li><a href="/penduduk/kelompok"><i class="fa fa-circle-o"></i> Kelompok</a></li>
+          <li class="{{ Request::segment(2) === 'kelompok' ? 'active' : null }}"><a href="/penduduk/kelompok"><i class="fa fa-circle-o"></i> Kelompok</a></li>
         </ul>
       </li>
       <li class="{{ Request::segment(1) === 'wilayah' ? 'active' : null }}">

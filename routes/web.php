@@ -69,6 +69,9 @@ Route::group(['middleware' => ['superadmin']], function ()
     Route::get('searchpenduduk', array('as'=>'searchpenduduk','uses'=>'PendudukController@nikAutoComplete'));
     Route::get('searchnama', array('as'=>'searchnama','uses'=>'PendudukController@namaAutoComplete'));
 
+    //crud Kelompok
+    Route::get('/penduduk/kelompok', 'KelompokController@index');
+
     //crud pemerintah
     Route::get('/desa/pemerintah', 'PemerintahController@index');
     Route::get('/desa/pemerintah/create', 'PemerintahController@create');

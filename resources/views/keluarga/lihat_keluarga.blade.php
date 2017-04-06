@@ -57,38 +57,6 @@
               </div>
 
               <div class="content-body">
-                <div class="col-md-12">
-                  <h3>Kepala Keluarga</h3>
-                  <div class="col-md-2">
-                    <img src="/assets/dist/img/user2-160x160.jpg" class="user-image" alt="User Image" width="100%">
-                  </div>
-                  <div class="col-md-10">
-                    <div class="col-md-2">
-                      <p><b>Nama</b></p>
-                    </div>
-                    <div class="col-md-10">
-                      <p>{{ $keluarga->nama }}</p>
-                    </div>
-                    <div class="col-md-2">
-                      <p><b>Nik</b></p>
-                    </div>
-                    <div class="col-md-10">
-                      <p>{{ $keluarga->nik }}</p>
-                    </div>
-                    <div class="col-md-2">
-                      <p><b>Jenis Kelamin</b></p>
-                    </div>
-                    <div class="col-md-10">
-                      <p>{{ $keluarga->jenis_kelamin }}</p>
-                    </div>
-                    <div class="col-md-2">
-                      <p><b>Lahir</b></p>
-                    </div>
-                    <div class="col-md-10">
-                      <p>{{ $keluarga->tempat_lahir . ",  ". $keluarga->tanggal_lahir }}</p>
-                    </div>
-                  </div>
-                </div>
 
                 <div class="col-md-12">
                   <h3>Anggota Keluarga</h3>
@@ -100,14 +68,14 @@
                             <img class="img-circle" src="/assets/dist/img/user2-160x160.jpg" alt="User Avatar">
                           </div>
                           <h5 class="widget-user-username" style="font-size:17px;">{{ $anggota->nama }}</h5>
-                          <h5 class="widget-user-desc">{{ $anggota->nik }}</h5>
+                          <h5 class="widget-user-desc">{{ $anggota->hubungan }}</h5>
                         </div>
                         <div class="box-footer no-padding">
                           <ul class="nav nav-stacked">
+                            <li><a href="#">NIK <span class="pull-right">{{ $anggota->nik }}</span></a></li>
                             <li><a href="#">Lahir <span class="pull-right">{{ $anggota->tanggal_lahir }}</span></a></li>
                             <li><a href="#">Umur <span class="pull-right">{{ $anggota->tanggal_lahir }}</span></a></li>
                             <li><a href="#">Pekerjaan <span class="pull-right">{{ $anggota->pekerjaan }}</span></a></li>
-                            <li><a href="#">Agama <span class="pull-right">{{ $anggota->agama }}</span></a></li>
                           </ul>
                         </div>
                       </div>
