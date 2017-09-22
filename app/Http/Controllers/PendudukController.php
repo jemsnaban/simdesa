@@ -28,7 +28,7 @@ class PendudukController extends Controller
             ->leftJoin('cara_kbs AS h', 'h.id', '=', 'a.cara_kb')
             ->leftJoin('statuses AS i', 'i.id', '=', 'a.status')
             ->select('a.*', 'b.nama AS agama', 'c.nama as pendidikan', 'd.nama as pekerjaan',
-            'e.nama as status_kawin', 'f.nama as hubungan', 'g.nama as cacat', 'h.nama as cara_kb', 'i.nama as status')
+            'e.nama as status_kawin', 'f.nama as hubungan', 'g.cacat_nama as cacat', 'h.nama as cara_kb', 'i.nama as status')
             ->get();
 
       //dd($penduduks);
